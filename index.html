@@ -1,75 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WeatherApp</title>
+    <title>Blackjack</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    
+    <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+
+
 </head>
+
 <body>
-   <style>
-       .header{
-           text-align: center;
-       }
-       
-       }
-       #twoCards > img{
-           width: 30%;
-       }
-       #twoCards {
-           background-color: darkgreen;
-           height:;
-           text-align: center;
-	
-       }
-       #twoCards > img:nth-child(2){
-           width: 10%;
-       }
-       #twoCards > img:nth-child(3){
-           width: 10%;
-       }
-       #twoCards > img:nth-child(1){
-           width: 10%;
-       }
-       p{
-            font-family: 'Roboto', sans-serif;¨
-           
-       }
-       #twoCards > p{
-           color: white;
-       }
-       #buttons{
-           text-align: center;
-       }
-       h1{
-           color: dimgray;
-           text-align: center;
-       }
-       #dealerCards {
-           text-align: center;
-           background-color: green;
-           border-bottom: 3px solid white;
-       }
-       #dealerCards > img{
-           
-           width: 10%;
-       }
-      
-    </style>
+
     <h1>Welcome to the worst BlackJack game on the internet</h1>
     <div class="header">
         <button id="start">Start Game</button></div>
-        <div id="dealerCards"></div>
-    <div id="twoCards"></div>
-    <div id="nextCard"></div>
-        <div id="buttons">
-        <button id="draw">draw card</button>
-            <button id="stand">stand</button>
-            </div>
+          <div id="dealerdiv">
+          <div id="dealerCards"></div>
+          </div>
+          <div id="playerdiv">
+           <div id="twoCards"></div>
+             <div id="nextCard"></div>
+             </div>
+         <div id="buttons">
+            <button id="draw">Hit</button>
+             <button id="stand">Stand</button>
+             <button id="reload">Reload game</button>
+    </div>
+<div id="yourscore"></div>
+    <div id="dealerscore"></div>
+    
     <script src="main.js"></script>
 </body>
+
 </html>

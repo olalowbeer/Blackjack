@@ -1,0 +1,85 @@
+body{
+    background: #1D1F21;
+    height: 100%;
+    font-family: 'Dancing Script', cursive;
+
+    
+}
+body > iframe{
+    text-align: center;
+    height: 100px;
+    width: 100%;
+}
+
+.header {
+    text-align: center;
+    background: white;
+}
+
+
+#twoCards > img {
+    width: 30%;
+}
+
+#dealerdiv {
+	min-height: 100px;
+    background: green;
+}
+#playerdiv{
+    min-height: 100px;
+    background: darkgreen;
+}
+
+#twoCards {
+    background-color: darkgreen;
+    text-align: center;
+
+}
+
+#twoCards > img:nth-child(2) {
+    width: 10%;
+}
+
+#twoCards > img:nth-child(3) {
+    width: 10%;
+}
+
+#twoCards > img:nth-child(1) {
+    width: 10%;
+}
+
+p {
+    //font-family: 'Roboto', sans-serif;
+    color: white;
+    
+}
+
+#twoCards > p {
+    color: white;
+}
+
+#buttons {
+    text-align: center;
+    background: white;
+    color: black;
+}
+h2{
+    color: white;
+    text-align: center;
+    
+}
+h1 {
+    color: white;
+    text-align: center;
+}
+
+#dealerCards {
+    text-align: center;
+    background-color: green;
+    border-bottom: 3px solid white;
+}
+
+#dealerCards > img {
+
+    width: 10%;
+}
