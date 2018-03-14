@@ -49,7 +49,7 @@ body > iframe{
 }
 
 p {
-    //font-family: 'Roboto', sans-serif;
+    font-family: futura;
     color: white;
     
 }
@@ -64,6 +64,7 @@ p {
     color: black;
 }
 h2{
+    font-family: futura;
     color: white;
     text-align: center;
     

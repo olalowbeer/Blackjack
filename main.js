@@ -24,10 +24,11 @@ const dealerScore = document.getElementById('dealerscore')
 //            console.log(error)
 //        })
 //}
+
 drawCards();
 
 function drawCards() {
-    fetch("https://deckofcardsapi.com/api/deck/0xket3z06ecj/draw/?count=10")
+    fetch("https://deckofcardsapi.com/api/deck/zghxln0ct1rq/draw/?count=10")
 
         .then(function (response) {
             return response.json();
@@ -36,17 +37,13 @@ function drawCards() {
             displayCards(cards)
             drawMoreCards(cards)
             stand(cards)
-            //getAllCardValues(cards)
             console.log(cards)
-
-
 
         })
         .catch(function (error) {
             console.log(error)
         })
 }
-
 
 
 reloadGame();
@@ -71,13 +68,9 @@ function displayCards(cards) {
         }
         if (cards.cards[0].value == "KING") {
             cards.cards[0].value = 10;
-
-
         }
         if (cards.cards[0].value == "ACE") {
             cards.cards[0].value = 11;
-
-
         }
 
         if (cards.cards[1].value == "JACK") {
@@ -137,13 +130,7 @@ function displayCards(cards) {
         if (playerValue == 21) {
             let playerValue = `<h2> BLACKJACK typ! Du vann!</h2>`;
             playerScore.innerHTML = playerValue;
-        } else if (playerValue > 21) {
-            //console.log("You are the fattest dude i know!")
-            let playerValue =
-                `<h2> Du är tjock! looser! reload game</h2> `;
-            playerScore.innerHTML = playerValue;
-
-
+            
         } else if (playerValue <= 20) {
             let values =
                 `<h2> You have ${playerValue}, hit or stand </h2> `;
@@ -152,18 +139,12 @@ function displayCards(cards) {
         }
 
 
-        //console.log(cards.cards[0].value)
         dealerCardsDiv.innerHTML = dealerCards;
         cardsInfoDiv.innerHTML = twoCards;
-        //        cards.cards[0].value = cardCounter++
-        //        if (cardCounter === 21) {
-        //            // What to do if the counter reaches 4
-        //            console.log("you are fat")
-        //        }
+       
 
     });
 }
-
 
 
 function drawMoreCards(cards) {
@@ -186,13 +167,9 @@ function drawMoreCards(cards) {
         }
         if (cards.cards[0].value == "KING") {
             cards.cards[0].value = 10;
-
-
         }
         if (cards.cards[0].value == "ACE") {
             cards.cards[0].value = 11;
-
-
         }
 
         if (cards.cards[1].value == "JACK") {
@@ -242,10 +219,10 @@ function drawMoreCards(cards) {
 
         } else if (playerValue <= 20) {
             let values =
-                `<h1> You have ${playerValue} you stand your ground </h1> `;
+                `<h2> You have ${playerValue} you should stop while you have the chance </h2> `;
             playerScore.innerHTML = values;
 
-        }
+        } 
 
 
 
@@ -254,10 +231,8 @@ function drawMoreCards(cards) {
         cardsInfoDiv.innerHTML = draw;
 
 
-
     })
 }
-
 
 
 function stand(cards) {
@@ -318,9 +293,9 @@ function stand(cards) {
 
         }
 
-
-
-
+//        let playerValue = parseInt(cards.cards[0].value, 10) + parseInt(cards.cards[1].value, 10) + parseInt(cards.cards[3].value, 10)
+//         
+//         console.log(playerValue);
         let dealerValue = parseInt(cards.cards[2].value, 10) + parseInt(cards.cards[4].value, 10)
 
         dealerCardsDiv.innerHTML = stand;
@@ -339,12 +314,23 @@ function stand(cards) {
             let dealerValue = parseInt(cards.cards[2].value, 10) + parseInt(cards.cards[4].value, 10) + parseInt(cards.cards[5].value, 10)
             console.log(dealerValue);
             dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue} <h2>`;
-        } else {
-            console.log("dealer stops at")
+                    
+               if(dealerValue > 21){
+                              let values = `<h2>Dealer is fat as hell! You win!</h2`; 
+                              dealerScore.innerHTML = values;
+                              playerScore.innerHTML = "";
+                          }
+               if(dealerValue == 21){
+                   let values = `<h2> Dealer wins </h2>`;
+               }
+                          
+         }  
+        
+        else {
             let dealerValue = parseInt(cards.cards[2].value, 10) + parseInt(cards.cards[4].value, 10)
 
             let values =
-                `<h1> Dealer has ${dealerValue} </h1> `;
+                `<h2> Dealer stops at ${dealerValue} </h2> `;
             dealerScore.innerHTML = values;
 
         }
