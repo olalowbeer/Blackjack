@@ -104,16 +104,6 @@ button:active {
 	top:1px;
 }
 
-/*
-    cursor: pointer;
-    border-radius: 5px;
-    color: antiquewhite;
-    padding: 5px;
-    margin: 5px;
-    font-family: futura;
-    background-color: black;
-*/
-
 h2{
     font-family: futura;
     color: white;
@@ -154,46 +144,6 @@ h1 {
         opacity: 1;
     }
 }
-
-/*
-@media screen and (max-width: 460px) {
-    
-        #twoCards > img {
-    width: 20%;
-     -webkit-animation: fadein 1s ease 0s forwards;
-    animation: fadein 1s ease 0s forwards;
-}
-
-    #dealerCards > img {
-    width: 20%;
-    -webkit-animation: fadein 3s ease 0s forwards;
-    animation: fadein 3s ease 0s forwards;
-}
-    
-#twoCards > img:nth-child(2) {
-    width: 20%;
-     -webkit-animation: fadein 1s ease 0s forwards;
-    animation: fadein 1s ease 0s forwards;
-}
-
-
-#twoCards > img:nth-child(3) {
-    width: 20%;
-     -webkit-animation: fadein 1s ease 0s forwards;
-    animation: fadein 1s ease 0s forwards;
-}
-
-
-#twoCards > img:nth-child(1) {
-    width: 20%;
-     -webkit-animation: fadein 1s ease 0s forwards;
-    animation: fadein 1s ease 0s forwards;
-}
-
-    
-    
-}
-*/
 
 
 @media screen and (min-width: 900px){
