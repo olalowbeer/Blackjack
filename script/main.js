@@ -18,7 +18,6 @@ function getDeck() {
             return response.json();
         })
         .then(function (deck) {
-            console.log(deck)
         })
         .catch(function (error) {
             console.log(error)
@@ -39,7 +38,6 @@ function drawCards() {
             displayCards(cards)
             drawMoreCards(cards)
             stand(cards)
-            console.log(cards)
 
         })
         .catch(function (error) {
@@ -224,7 +222,6 @@ function drawMoreCards(cards) {
             let playerValue = `<h2> BLACKJACK typ! Du vann! </h2>`;
             playerScore.innerHTML = playerValue;
         } else if (playerValue > 21) {
-            //console.log("You are the fattest dude i know!")
             let playerValue =
                 `<h2> You are busto! You loose! </h2> `;
             playerScore.innerHTML = playerValue;
@@ -366,7 +363,6 @@ function stand(cards) {
 
         dealerCardsDiv.innerHTML = stand;
 
-        console.log(dealerValue);
 
 
         //alot of ifs depending of values of playercards and dealercards//
