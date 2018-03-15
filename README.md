@@ -1,7 +1,7 @@
 
 # `Async & API` :satellite:
 
-Ola lowbeer | [GitHub Pages]/ [GitHub Repository]
+Ola Löwbeer | [GitHub Pages]/ [GitHub Repository](https://github.com/olalowbeer/Blackjack)
 
 ## `About`
 
