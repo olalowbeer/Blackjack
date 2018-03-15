@@ -13,7 +13,7 @@ getDeck();
 
 function getDeck() {
     fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=20")
-        
+
         .then(function (response) {
             return response.json();
         })
@@ -24,6 +24,8 @@ function getDeck() {
             console.log(error)
         })
 }
+
+//gets 10 cards from a deck of cards//
 
 drawCards();
 
@@ -46,6 +48,7 @@ function drawCards() {
 }
 
 
+//reloads the page and the game//
 reloadGame();
 
 function reloadGame() {
@@ -55,8 +58,12 @@ function reloadGame() {
     })
 }
 
+//displays first cards//
+
 function displayCards(cards) {
     startButton.addEventListener("click", function () {
+
+        //changes value om the suited cards//
 
         if (cards.cards[0].value == "JACK") {
             cards.cards[0].value = 10;
@@ -109,22 +116,20 @@ function displayCards(cards) {
         <p> Dealers Hand </p>
         <img src="${cards.cards[2].image}">
         
-
-`;
-        let dealerValue = parseInt(cards.cards[2].value)
-
-        console.log(dealerValue);
+        `;
 
         let twoCards = `
        <img src="${cards.cards[0].image}">
        <img src="${cards.cards[1].image}">
        <p>Your hand</p>
         
+        `;
 
-`;
+        //adds the values of the cards//
+
         let playerValue = parseInt(cards.cards[0].value, 10) + parseInt(cards.cards[1].value, 10)
 
-        console.log(playerValue);
+        //if value is ... this text appears//
 
         if (playerValue == 21) {
             let playerValue = `<h2> BLACKJACK! Du vann!</h2>`;
@@ -144,17 +149,22 @@ function displayCards(cards) {
     });
 }
 
+//draws more cards//
 
 function drawMoreCards(cards) {
     drawCardButton.addEventListener('click', function () {
+
+        //displays the old and the new card//
+
         let draw = `
         <img src="${cards.cards[0].image}">
         <img src="${cards.cards[1].image}">
         <img src="${cards.cards[3].image}">
                <p>Your hand</p>
+        `;
 
+        //turns suited cards into numbers//
 
-`;
         if (cards.cards[0].value == "JACK") {
             cards.cards[0].value = 10;
         }
@@ -203,7 +213,12 @@ function drawMoreCards(cards) {
 
         }
 
+        //adds the values of the cards//
+
         let playerValue = parseInt(cards.cards[0].value, 10) + parseInt(cards.cards[1].value, 10) + parseInt(cards.cards[3].value, 10);
+
+
+        //if values are ... this happens//
 
         if (playerValue == 21) {
             let playerValue = `<h2> BLACKJACK typ! Du vann! </h2>`;
@@ -222,20 +237,23 @@ function drawMoreCards(cards) {
 
         }
 
-        console.log(playerValue);
         cardsInfoDiv.innerHTML = draw;
     })
 }
 
+//when player decide to stand dealer draws card//
 
 function stand(cards) {
     standButton.addEventListener('click', function () {
-        let stand = `
-    <p> Dealers Hand </p>
+
+
+      let stand = `
+     <p> Dealers Hand </p>
      <img src="${cards.cards[2].image}">
      <img src="${cards.cards[4].image}">
+     `;
 
-`;
+        //turns suited cards into numbers//
 
         if (cards.cards[0].value == "JACK") {
             cards.cards[0].value = 10;
@@ -333,17 +351,25 @@ function stand(cards) {
 
         }
 
+        //adds values of playercards//
+
         let playerValue = parseInt(cards.cards[0].value, 10) + parseInt(cards.cards[1].value, 10)
+
+        // adds values of three cards//
 
         let playerValueIfThreeCards = parseInt(cards.cards[0].value, 10) + parseInt(cards.cards[1].value, 10) + parseInt(cards.cards[3].value, 10);
 
-        console.log(playerValue);
-        console.log(playerValueIfThreeCards);
+
+        //adds dealers cards//
+
         let dealerValue = parseInt(cards.cards[2].value, 10) + parseInt(cards.cards[4].value, 10)
 
         dealerCardsDiv.innerHTML = stand;
 
         console.log(dealerValue);
+
+
+        //alot of ifs depending of values of playercards and dealercards//
 
         if (dealerValue <= 16) {
             let values = `
@@ -354,35 +380,38 @@ function stand(cards) {
             dealerCardsDiv.innerHTML = values;
 
             let dealerValue = parseInt(cards.cards[2].value, 10) + parseInt(cards.cards[4].value, 10) + parseInt(cards.cards[5].value, 10)
-            console.log(dealerValue);
+
+
             if (dealerValue > playerValue) {
-                dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue} Dealer wins!<h2>`;
+                dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, dealer wins!<h2>`;
                 playerScore.innerHTML = "";
             }
             if (dealerValue < playerValue && dealerValue < 16) {
                 dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, cause a noob made this game. You win!<h2>`;
                 playerScore.innerHTML = "";
-            } if (dealerValue < playerValue) {
+            }
+            if (dealerValue < playerValue) {
                 dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, you win!<h2>`;
                 playerScore.innerHTML = "";
             }
             if (dealerValue == playerValue) {
                 let values = `<h2> It's a tie! </h2> 
-            `;
+                        `;
                 dealerScore.innerHTML = values;
                 playerScore.innerHTML = "";
 
             }
-
             if (dealerValue > 21) {
                 let values = `<h2>Dealer busts! You win!</h2`;
                 dealerScore.innerHTML = values;
                 playerScore.innerHTML = "";
+
             }
             if (dealerValue == 21) {
                 let values = `<h2> Dealer has 21 and wins, if you have a problem with that, email me at lowbeer.ola@gmail.com </h2>`;
                 dealerScore.innerHTML = values;
                 playerScore.innerHTML = "";
+
             }
 
         } else if (dealerValue > playerValue) {
