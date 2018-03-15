@@ -30,7 +30,7 @@ function getDeck() {
 drawCards();
 
 function drawCards() {
-    fetch("https://deckofcardsapi.com/api/deck/1tq9tyhl1klj/draw/?count=10")
+    fetch("https://deckofcardsapi.com/api/deck/oi72ldreizjj/draw/?count=10")
 
         .then(function (response) {
             return response.json();
