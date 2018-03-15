@@ -9,26 +9,26 @@ const playerScore = document.getElementById('yourscore')
 const dealerScore = document.getElementById('dealerscore')
 
 
-//getDeck();
-//
-//function getDeck() {
-//    fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=20")
-//        
-//        .then(function (response) {
-//            return response.json();
-//        })
-//        .then(function (deck) {
-//            console.log(deck)
-//        })
-//        .catch(function (error) {
-//            console.log(error)
-//        })
-//}
+getDeck();
+
+function getDeck() {
+    fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=20")
+        
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (deck) {
+            console.log(deck)
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+}
 
 drawCards();
 
 function drawCards() {
-    fetch("https://deckofcardsapi.com/api/deck/zghxln0ct1rq/draw/?count=10")
+    fetch("https://deckofcardsapi.com/api/deck/1tq9tyhl1klj/draw/?count=10")
 
         .then(function (response) {
             return response.json();
@@ -57,8 +57,6 @@ function reloadGame() {
 
 function displayCards(cards) {
     startButton.addEventListener("click", function () {
-
-        //twoCards.innerHTML = ""
 
         if (cards.cards[0].value == "JACK") {
             cards.cards[0].value = 10;
@@ -110,6 +108,7 @@ function displayCards(cards) {
         let dealerCards = `
         <p> Dealers Hand </p>
         <img src="${cards.cards[2].image}">
+        
 
 `;
         let dealerValue = parseInt(cards.cards[2].value)
@@ -128,9 +127,9 @@ function displayCards(cards) {
         console.log(playerValue);
 
         if (playerValue == 21) {
-            let playerValue = `<h2> BLACKJACK typ! Du vann!</h2>`;
+            let playerValue = `<h2> BLACKJACK! Du vann!</h2>`;
             playerScore.innerHTML = playerValue;
-            
+
         } else if (playerValue <= 20) {
             let values =
                 `<h2> You have ${playerValue}, hit or stand </h2> `;
@@ -138,10 +137,9 @@ function displayCards(cards) {
 
         }
 
-
         dealerCardsDiv.innerHTML = dealerCards;
         cardsInfoDiv.innerHTML = twoCards;
-       
+
 
     });
 }
@@ -213,24 +211,19 @@ function drawMoreCards(cards) {
         } else if (playerValue > 21) {
             //console.log("You are the fattest dude i know!")
             let playerValue =
-                `<h2> Du är tjock! du förlorar. </h2> `;
+                `<h2> You are busto! You loose! </h2> `;
             playerScore.innerHTML = playerValue;
 
 
         } else if (playerValue <= 20) {
             let values =
-                `<h2> You have ${playerValue} you should stop while you have the chance </h2> `;
+                `<h2> You have ${playerValue}, you should stop while you have the chance </h2> `;
             playerScore.innerHTML = values;
 
-        } 
-
-
+        }
 
         console.log(playerValue);
-        //console.log(draw);
         cardsInfoDiv.innerHTML = draw;
-
-
     })
 }
 
@@ -244,6 +237,53 @@ function stand(cards) {
 
 `;
 
+        if (cards.cards[0].value == "JACK") {
+            cards.cards[0].value = 10;
+        }
+        if (cards.cards[0].value == "QUEEN") {
+            cards.cards[0].value = 10;
+
+
+        }
+        if (cards.cards[0].value == "KING") {
+            cards.cards[0].value = 10;
+        }
+        if (cards.cards[0].value == "ACE") {
+            cards.cards[0].value = 11;
+        }
+
+        if (cards.cards[1].value == "JACK") {
+            cards.cards[1].value = 10;
+
+        }
+        if (cards.cards[1].value == "QUEEN") {
+            cards.cards[1].value = 10;
+
+        }
+        if (cards.cards[1].value == "KING") {
+            cards.cards[1].value = 10;
+
+        }
+        if (cards.cards[1].value == "ACE") {
+            cards.cards[1].value = 11;
+
+        }
+        if (cards.cards[3].value == "JACK") {
+            cards.cards[3].value = 10;
+
+        }
+        if (cards.cards[3].value == "QUEEN") {
+            cards.cards[3].value = 10;
+
+        }
+        if (cards.cards[3].value == "KING") {
+            cards.cards[3].value = 10;
+
+        }
+        if (cards.cards[3].value == "ACE") {
+            cards.cards[3].value = 11;
+
+        }
         if (cards.cards[2].value == "JACK") {
             cards.cards[2].value = 10;
 
@@ -293,9 +333,12 @@ function stand(cards) {
 
         }
 
-//        let playerValue = parseInt(cards.cards[0].value, 10) + parseInt(cards.cards[1].value, 10) + parseInt(cards.cards[3].value, 10)
-//         
-//         console.log(playerValue);
+        let playerValue = parseInt(cards.cards[0].value, 10) + parseInt(cards.cards[1].value, 10)
+
+        let playerValueIfThreeCards = parseInt(cards.cards[0].value, 10) + parseInt(cards.cards[1].value, 10) + parseInt(cards.cards[3].value, 10);
+
+        console.log(playerValue);
+        console.log(playerValueIfThreeCards);
         let dealerValue = parseInt(cards.cards[2].value, 10) + parseInt(cards.cards[4].value, 10)
 
         dealerCardsDiv.innerHTML = stand;
@@ -303,7 +346,6 @@ function stand(cards) {
         console.log(dealerValue);
 
         if (dealerValue <= 16) {
-            //console.log("dealer hits");
             let values = `
               <p> Dealers Hand </p>
                 <img src="${cards.cards[2].image}">
@@ -313,30 +355,54 @@ function stand(cards) {
 
             let dealerValue = parseInt(cards.cards[2].value, 10) + parseInt(cards.cards[4].value, 10) + parseInt(cards.cards[5].value, 10)
             console.log(dealerValue);
-            dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue} <h2>`;
-                    
-               if(dealerValue > 21){
-                              let values = `<h2>Dealer is fat as hell! You win!</h2`; 
-                              dealerScore.innerHTML = values;
-                              playerScore.innerHTML = "";
-                          }
-               if(dealerValue == 21){
-                   let values = `<h2> Dealer wins </h2>`;
-               }
-                          
-         }  
-        
-        else {
-            let dealerValue = parseInt(cards.cards[2].value, 10) + parseInt(cards.cards[4].value, 10)
+            if (dealerValue > playerValue) {
+                dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue} Dealer wins!<h2>`;
+                playerScore.innerHTML = "";
+            }
+            if (dealerValue < playerValue && dealerValue < 16) {
+                dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, cause a noob made this game. You win!<h2>`;
+                playerScore.innerHTML = "";
+            } if (dealerValue < playerValue) {
+                dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, you win!<h2>`;
+                playerScore.innerHTML = "";
+            }
+            if (dealerValue == playerValue) {
+                let values = `<h2> It's a tie! </h2> 
+            `;
+                dealerScore.innerHTML = values;
+                playerScore.innerHTML = "";
 
-            let values =
-                `<h2> Dealer stops at ${dealerValue} </h2> `;
+            }
+
+            if (dealerValue > 21) {
+                let values = `<h2>Dealer busts! You win!</h2`;
+                dealerScore.innerHTML = values;
+                playerScore.innerHTML = "";
+            }
+            if (dealerValue == 21) {
+                let values = `<h2> Dealer has 21 and wins, if you have a problem with that, email me at lowbeer.ola@gmail.com </h2>`;
+                dealerScore.innerHTML = values;
+                playerScore.innerHTML = "";
+            }
+
+        } else if (dealerValue > playerValue) {
+            let values = `
+            <h2> Dealer stops at ${dealerValue}, dealer wins! </h2> 
+            `;
+
             dealerScore.innerHTML = values;
+            playerScore.innerHTML = "";
+        } else if (dealerValue < playerValue) {
+            dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, you win!<h2>`;
+            playerScore.innerHTML = "";
 
+        } else if (dealerValue == playerValue) {
+            let values = `<h2> It's a tie! </h2> 
+            `;
+            dealerScore.innerHTML = values;
+            playerScore.innerHTML = "";
+        } else {
+            console.log('error')
         }
-
-        //dealerCardsDiv.innerHTML = value;
-
-
     })
 }

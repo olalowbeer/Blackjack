@@ -2,23 +2,14 @@ body{
     background: #1D1F21;
     height: 100%;
     font-family: 'Dancing Script', cursive;
+    -webkit-animation: fadein 3s ease 0s forwards;
+    animation: fadein 3s ease 0s forwards;
 
     
-}
-body > iframe{
-    text-align: center;
-    height: 100px;
-    width: 100%;
 }
 
 .header {
     text-align: center;
-    background: white;
-}
-
-
-#twoCards > img {
-    width: 30%;
 }
 
 #dealerdiv {
@@ -33,25 +24,40 @@ body > iframe{
 #twoCards {
     background-color: darkgreen;
     text-align: center;
+    
 
 }
 
 #twoCards > img:nth-child(2) {
     width: 10%;
+     -webkit-animation: fadein 1s ease 0s forwards;
+    animation: fadein 1s ease 0s forwards;
 }
+
 
 #twoCards > img:nth-child(3) {
     width: 10%;
+     -webkit-animation: fadein 1s ease 0s forwards;
+    animation: fadein 1s ease 0s forwards;
 }
+
 
 #twoCards > img:nth-child(1) {
     width: 10%;
+     -webkit-animation: fadein 1s ease 0s forwards;
+    animation: fadein 1s ease 0s forwards;
 }
 
+
 p {
+    margin-top: 0px;
     font-family: futura;
     color: white;
     
+}
+
+#twoCards > p {
+    margin-bottom: 0px;
 }
 
 #twoCards > p {
@@ -60,9 +66,54 @@ p {
 
 #buttons {
     text-align: center;
-    background: white;
     color: black;
+    
+    
 }
+button{
+
+	-moz-box-shadow: 3px 4px 0px 0px #8a2a21;
+	-webkit-box-shadow: 3px 4px 0px 0px #8a2a21;
+	box-shadow: 3px 4px 0px 0px #8a2a21;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24437));
+	background-color:#c62d1f;
+	-moz-border-radius:18px;
+	-webkit-border-radius:18px;
+	border-radius:18px;
+	border:1px solid #d02718;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:futura;
+	padding:7px;
+    margin: 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #810e05;
+}
+button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24437), color-stop(1, #c62d1f));
+	background:-moz-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+	background:-webkit-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+	background:-o-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+	background:-ms-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24437', endColorstr='#c62d1f',GradientType=0);
+	background-color:#f24437;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
+/*
+    cursor: pointer;
+    border-radius: 5px;
+    color: antiquewhite;
+    padding: 5px;
+    margin: 5px;
+    font-family: futura;
+    background-color: black;
+*/
+
 h2{
     font-family: futura;
     color: white;
@@ -81,6 +132,25 @@ h1 {
 }
 
 #dealerCards > img {
-
     width: 10%;
+    -webkit-animation: fadein 3s ease 0s forwards;
+    animation: fadein 3s ease 0s forwards;
+}
+
+@-webkit-keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
