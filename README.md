@@ -6,6 +6,7 @@ Ola Löwbeer | [GitHub Pages](https://olalowbeer.github.io/Javascript-ajax/)/ [G
 ## `About`
 
 BlackJack game
+he
 
 ## `About the API`
 
