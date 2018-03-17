@@ -1,12 +1,12 @@
 
 # `Async & API` :satellite:
 
-Ola Löwbeer | [GitHub Pages](https://olalowbeer.github.io/Javascript-ajax/)/ [GitHub Repository](https://github.com/olalowbeer/Blackjack)
+Ola Löwbeer | [GitHub Pages](https://olalowbeer.github.io/Javascript-ajax/)/ [GitHub Repository](https://github.com/olalowbeer/Javascript-ajax)
 
 ## `About`
 
 BlackJack game
-he
+
 
 ## `About the API`
 
