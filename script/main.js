@@ -18,6 +18,7 @@ function getDeck() {
             return response.json();
         })
         .then(function (deck) {
+        console.log(deck)
         })
         .catch(function (error) {
             console.log(error)
@@ -29,7 +30,7 @@ function getDeck() {
 drawCards();
 
 function drawCards() {
-    fetch("https://deckofcardsapi.com/api/deck/oi72ldreizjj/draw/?count=10")
+    fetch("https://deckofcardsapi.com/api/deck/hn8sbh8jgx69/draw/?count=10")
 
         .then(function (response) {
             return response.json();
@@ -38,6 +39,7 @@ function drawCards() {
             displayCards(cards)
             drawMoreCards(cards)
             stand(cards)
+            console.log(cards)
 
         })
         .catch(function (error) {
