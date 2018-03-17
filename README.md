@@ -21,3 +21,7 @@ I started out choosing the API not really sure if i could be capable of creating
 - make counting of cards when more cards work.
 - make better CSS 
 - make the game work correctly
+- restructure javascript
+- write better code
+- make card animations
+- code repeating...
