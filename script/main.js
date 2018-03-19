@@ -9,28 +9,28 @@ const playerScore = document.getElementById('yourscore')
 const dealerScore = document.getElementById('dealerscore')
 
 
-getDeck();
-
-function getDeck() {
-    fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=20")
-
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (deck) {
-        console.log(deck)
-        })
-        .catch(function (error) {
-            console.log(error)
-        })
-}
-
-//gets 10 cards from a deck of cards//
+//getDeck();
+//
+//function getDeck() {
+//    fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=20")
+//
+//        .then(function (response) {
+//            return response.json();
+//        })
+//        .then(function (deck) {
+//        console.log(deck)
+//        })
+//        .catch(function (error) {
+//            console.log(error)
+//        })
+//}
+//
+////gets 10 cards from a deck of cards//
 
 drawCards();
 
 function drawCards() {
-    fetch("https://deckofcardsapi.com/api/deck/hn8sbh8jgx69/draw/?count=10")
+    fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=10")
 
         .then(function (response) {
             return response.json();
@@ -380,56 +380,56 @@ function stand(cards) {
             let dealerValue = parseInt(cards.cards[2].value, 10) + parseInt(cards.cards[4].value, 10) + parseInt(cards.cards[5].value, 10)
 
 
-            if (dealerValue > playerValue) {
-                dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, dealer wins!<h2>`;
+                    if (dealerValue > playerValue) {
+                        dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, dealer wins!<h2>`;
+                        playerScore.innerHTML = "";
+                    }
+                    if (dealerValue < playerValue && dealerValue < 16) {
+                        dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, cause a noob made this game. You win!<h2>`;
+                        playerScore.innerHTML = "";
+                    }
+                    if (dealerValue < playerValue) {
+                        dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, you win!<h2>`;
+                        playerScore.innerHTML = "";
+                    }
+                    if (dealerValue == playerValue) {
+                        let values = `<h2> It's a tie! </h2> 
+                                `;
+                        dealerScore.innerHTML = values;
+                        playerScore.innerHTML = "";
+
+                    }
+                    if (dealerValue > 21) {
+                        let values = `<h2>Dealer busts! You win!</h2`;
+                        dealerScore.innerHTML = values;
+                        playerScore.innerHTML = "";
+
+                    }
+                    if (dealerValue == 21) {
+                        let values = `<h2> Dealer has 21 and wins, if you have a problem with that, email me at lowbeer.ola@gmail.com </h2>`;
+                        dealerScore.innerHTML = values;
+                        playerScore.innerHTML = "";
+
+                    }
+
+            } else if (dealerValue > playerValue) {
+                let values = `
+                <h2> Dealer stops at ${dealerValue}, dealer wins! </h2> 
+                `;
+
+                dealerScore.innerHTML = values;
                 playerScore.innerHTML = "";
-            }
-            if (dealerValue < playerValue && dealerValue < 16) {
-                dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, cause a noob made this game. You win!<h2>`;
-                playerScore.innerHTML = "";
-            }
-            if (dealerValue < playerValue) {
+            } else if (dealerValue < playerValue) {
                 dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, you win!<h2>`;
                 playerScore.innerHTML = "";
-            }
-            if (dealerValue == playerValue) {
+
+            } else if (dealerValue == playerValue) {
                 let values = `<h2> It's a tie! </h2> 
-                        `;
+                `;
                 dealerScore.innerHTML = values;
                 playerScore.innerHTML = "";
-
-            }
-            if (dealerValue > 21) {
-                let values = `<h2>Dealer busts! You win!</h2`;
-                dealerScore.innerHTML = values;
-                playerScore.innerHTML = "";
-
-            }
-            if (dealerValue == 21) {
-                let values = `<h2> Dealer has 21 and wins, if you have a problem with that, email me at lowbeer.ola@gmail.com </h2>`;
-                dealerScore.innerHTML = values;
-                playerScore.innerHTML = "";
-
-            }
-
-        } else if (dealerValue > playerValue) {
-            let values = `
-            <h2> Dealer stops at ${dealerValue}, dealer wins! </h2> 
-            `;
-
-            dealerScore.innerHTML = values;
-            playerScore.innerHTML = "";
-        } else if (dealerValue < playerValue) {
-            dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, you win!<h2>`;
-            playerScore.innerHTML = "";
-
-        } else if (dealerValue == playerValue) {
-            let values = `<h2> It's a tie! </h2> 
-            `;
-            dealerScore.innerHTML = values;
-            playerScore.innerHTML = "";
-        } else {
-            console.log('error')
+            } else {
+                console.log('error')
         }
     })
 }

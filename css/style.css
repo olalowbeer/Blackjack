@@ -1,5 +1,13 @@
+html{
+    height: 100%;
+}
 body{
-    background: #1D1F21;
+    background-image: -webkit-linear-gradient(top, #1A4A1C, #308834 600px);
+    background-image: -moz-linear-gradient(top, #1A4A1C, #308834 600px);
+    background-image: -o-linear-gradient(top, #1A4A1C, #308834 600px);
+    background-image: -ms-linear-gradient(top, #1A4A1C, #308834 600px);
+    background-image: linear-gradient(to bottom, #1A4A1C, #308834 600px);
+    background-repeat: no-repeat;
     height: 100%;
     font-family: 'Dancing Script', cursive;
     -webkit-animation: fadein 3s ease 0s forwards;
@@ -7,48 +15,57 @@ body{
 
     
 }
+.table{
+    border-radius: 50px;
+    border: 6px solid white
+}
 
 .header {
     text-align: center;
 }
 
 #dealerdiv {
-	min-height: 100px;
-    background: green;
+	min-height: 128px;
+    //padding: 20px;
+    border-bottom: 3px solid yellow;
 }
 #playerdiv{
-    min-height: 100px;
-    background: darkgreen;
+    min-height: 128px;
+    //padding: 20px;
 }
 
 #twoCards {
-    background-color: darkgreen;
     text-align: center;
-    
+    -webkit-animation: fadein 1s ease 0s forwards;
+    animation: fadein 1s ease 0s forwards;
 
 }
 
 #twoCards > img:nth-child(2) {
     width: 10%;
-     -webkit-animation: fadein 1s ease 0s forwards;
+    -webkit-animation: fadein 1s ease 0s forwards;
     animation: fadein 1s ease 0s forwards;
+     
 }
 
 
 #twoCards > img:nth-child(3) {
     width: 10%;
-     -webkit-animation: fadein 1s ease 0s forwards;
+    -webkit-animation: fadein 1s ease 0s forwards;
     animation: fadein 1s ease 0s forwards;
 }
+      
+
 
 
 #twoCards > img:nth-child(1) {
     width: 10%;
-     -webkit-animation: fadein 1s ease 0s forwards;
+    -webkit-animation: fadein 1s ease 0s forwards;
     animation: fadein 1s ease 0s forwards;
 }
 
 
+	
 p {
     margin-top: 0px;
     font-family: futura;
@@ -77,9 +94,7 @@ button{
 	box-shadow: 3px 4px 0px 0px #8a2a21;
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24437));
 	background-color:#c62d1f;
-	-moz-border-radius:18px;
-	-webkit-border-radius:18px;
-	border-radius:18px;
+	border-radius:;
 	border:1px solid #d02718;
 	cursor:pointer;
 	color:#ffffff;
@@ -117,14 +132,12 @@ h1 {
 
 #dealerCards {
     text-align: center;
-    background-color: green;
-    border-bottom: 3px solid white;
 }
 
 #dealerCards > img {
     width: 10%;
-    -webkit-animation: fadein 3s ease 0s forwards;
-    animation: fadein 3s ease 0s forwards;
+    -webkit-animation: slide-in-top 1.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-top 1.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @-webkit-keyframes fadein {
@@ -143,6 +156,43 @@ h1 {
     100% {
         opacity: 1;
     }
+}
+
+
+@media screen and (max-width: 560px){
+     #twoCards > img {
+    width: 15%;
+     -webkit-animation: fadein 1s ease 0s forwards;
+    animation: fadein 1s ease 0s forwards;
+}
+
+    #dealerCards > img {
+    width: 15%;
+    -webkit-animation: fadein 3s ease 0s forwards;
+    animation: fadein 3s ease 0s forwards;
+}
+    
+#twoCards > img:nth-child(2) {
+    width: 15%;
+     -webkit-animation: fadein 1s ease 0s forwards;
+    animation: fadein 1s ease 0s forwards;
+}
+
+
+#twoCards > img:nth-child(3) {
+    width: 15%;
+     -webkit-animation: fadein 1s ease 0s forwards;
+    animation: fadein 1s ease 0s forwards;
+}
+
+
+#twoCards > img:nth-child(1) {
+    width: 15%;
+     -webkit-animation: fadein 1s ease 0s forwards;
+    animation: fadein 1s ease 0s forwards;
+}
+    
+
 }
 
 
@@ -179,6 +229,5 @@ h1 {
      -webkit-animation: fadein 1s ease 0s forwards;
     animation: fadein 1s ease 0s forwards;
 }
-
     
 }
