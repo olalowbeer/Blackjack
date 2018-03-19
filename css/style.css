@@ -26,12 +26,10 @@ body{
 
 #dealerdiv {
 	min-height: 128px;
-    //padding: 20px;
     border-bottom: 3px solid yellow;
 }
 #playerdiv{
     min-height: 128px;
-    //padding: 20px;
 }
 
 #twoCards {
@@ -104,6 +102,7 @@ button{
 	text-decoration:none;
 	text-shadow:0px 1px 0px #810e05;
 }
+
 button:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24437), color-stop(1, #c62d1f));
 	background:-moz-linear-gradient(top, #f24437 5%, #c62d1f 100%);
@@ -114,6 +113,7 @@ button:hover {
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24437', endColorstr='#c62d1f',GradientType=0);
 	background-color:#f24437;
 }
+
 button:active {
 	position:relative;
 	top:1px;
@@ -126,6 +126,7 @@ h2{
     
 }
 h1 {
+    padding-top: 30px;
     color: white;
     text-align: center;
 }
