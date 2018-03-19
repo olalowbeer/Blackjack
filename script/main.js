@@ -9,22 +9,8 @@ const playerScore = document.getElementById('yourscore')
 const dealerScore = document.getElementById('dealerscore')
 
 
-//getDeck();
-//
-//function getDeck() {
-//    fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=20")
-//
-//        .then(function (response) {
-//            return response.json();
-//        })
-//        .then(function (deck) {
-//        console.log(deck)
-//        })
-//        .catch(function (error) {
-//            console.log(error)
-//        })
-//}
-//
+
+
 ////gets 10 cards from a deck of cards//
 
 drawCards();
@@ -49,6 +35,7 @@ function drawCards() {
 
 
 //reloads the page and the game//
+
 reloadGame();
 
 function reloadGame() {
