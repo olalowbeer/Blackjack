@@ -1,4 +1,8 @@
-html,
+html{
+    height: 100vh;
+    padding: 20px;
+    margin: -10px;
+}
 body{
     background-image: -webkit-linear-gradient(top, #1A4A1C, #308834 600px);
     background-image: -moz-linear-gradient(top, #1A4A1C, #308834 600px);
@@ -126,7 +130,8 @@ h2{
     
 }
 h1 {
-    padding-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 10px;
     color: white;
     text-align: center;
 }
@@ -140,6 +145,7 @@ h1 {
     -webkit-animation: slide-in-top 1.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: slide-in-top 1.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
 
 @-webkit-keyframes fadein {
     0% {
