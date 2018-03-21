@@ -66,6 +66,8 @@ function displayCards(cards) {
                 cards.cards[i].value = 11;
             }
         }
+        
+        
 
         let dealerCards = `
         <p> Dealers Hand </p>
@@ -118,21 +120,6 @@ function drawMoreCards(cards) {
                <p>Your hand</p>
         `;
 
-        for (i = 0; i < cards.cards.length; i++) {
-            if (cards.cards[i].value == "JACK") {
-                cards.cards[i].value = 10;
-            }
-            if (cards.cards[i].value == "QUEEN") {
-                cards.cards[i].value = 10;
-            }
-            if (cards.cards[i].value == "KING") {
-                cards.cards[i].value = 10;
-            }
-            if (cards.cards[i].value == "ACE") {
-                cards.cards[i].value = 11;
-            }
-        }
-
         //adds the values of the cards//
 
         let playerValue = parseInt(cards.cards[0].value, 10) + parseInt(cards.cards[1].value, 10) + parseInt(cards.cards[3].value, 10);
@@ -171,23 +158,6 @@ function stand(cards) {
      <img src="${cards.cards[2].image}">
      <img src="${cards.cards[4].image}">
      `;
-
-        //turns suited cards into numbers//
-
-        for (i = 0; i < cards.cards.length; i++) {
-            if (cards.cards[i].value == "JACK") {
-                cards.cards[i].value = 10;
-            }
-            if (cards.cards[i].value == "QUEEN") {
-                cards.cards[i].value = 10;
-            }
-            if (cards.cards[i].value == "KING") {
-                cards.cards[i].value = 10;
-            }
-            if (cards.cards[i].value == "ACE") {
-                cards.cards[i].value = 11;
-            }
-        }
 
         //adds values of playercards//
 
