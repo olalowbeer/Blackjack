@@ -1,6 +1,4 @@
-html{
-    height: 100%;
-}
+html,
 body{
     background-image: -webkit-linear-gradient(top, #1A4A1C, #308834 600px);
     background-image: -moz-linear-gradient(top, #1A4A1C, #308834 600px);
@@ -9,6 +7,8 @@ body{
     background-image: linear-gradient(to bottom, #1A4A1C, #308834 600px);
     background-repeat: no-repeat;
     height: 100%;
+    padding: 0px;
+    margin: 0px;
     font-family: 'Dancing Script', cursive;
     -webkit-animation: fadein 3s ease 0s forwards;
     animation: fadein 3s ease 0s forwards;

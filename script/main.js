@@ -45,6 +45,9 @@ function reloadGame() {
     })
 }
 
+
+
+
 //displays first cards//
 
 function displayCards(cards) {
@@ -101,6 +104,7 @@ function displayCards(cards) {
 
         dealerCardsDiv.innerHTML = dealerCards;
         cardsInfoDiv.innerHTML = twoCards;
+    
 
 
     });
