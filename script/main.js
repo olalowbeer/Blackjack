@@ -51,53 +51,21 @@ function displayCards(cards) {
     startButton.addEventListener("click", function () {
 
         //changes value om the suited cards//
-
-        if (cards.cards[0].value == "JACK") {
-            cards.cards[0].value = 10;
+         
+        for (i = 0; i < cards.cards.length; i++) {
+            if (cards.cards[i].value == "JACK") {
+                cards.cards[i].value = 10;
+            }
+            if (cards.cards[i].value == "QUEEN") {
+                cards.cards[i].value = 10;
+            }
+            if (cards.cards[i].value == "KING") {
+                cards.cards[i].value = 10;
+            }
+            if (cards.cards[i].value == "ACE") {
+                cards.cards[i].value = 11;
+            }
         }
-        if (cards.cards[0].value == "QUEEN") {
-            cards.cards[0].value = 10;
-        }
-        if (cards.cards[0].value == "KING") {
-            cards.cards[0].value = 10;
-        }
-        if (cards.cards[0].value == "ACE") {
-            cards.cards[0].value = 11;
-        }
-
-        if (cards.cards[1].value == "JACK") {
-            cards.cards[1].value = 10;
-
-        }
-        if (cards.cards[1].value == "QUEEN") {
-            cards.cards[1].value = 10;
-
-        }
-        if (cards.cards[1].value == "KING") {
-            cards.cards[1].value = 10;
-
-        }
-        if (cards.cards[1].value == "ACE") {
-            cards.cards[1].value = 11;
-
-        }
-        if (cards.cards[2].value == "JACK") {
-            cards.cards[2].value = 10;
-
-        }
-        if (cards.cards[2].value == "QUEEN") {
-            cards.cards[2].value = 10;
-
-        }
-        if (cards.cards[2].value == "KING") {
-            cards.cards[2].value = 10;
-
-        }
-        if (cards.cards[2].value == "ACE") {
-            cards.cards[2].value = 11;
-
-        }
-
 
         let dealerCards = `
         <p> Dealers Hand </p>
@@ -150,54 +118,19 @@ function drawMoreCards(cards) {
                <p>Your hand</p>
         `;
 
-        //turns suited cards into numbers//
-
-        if (cards.cards[0].value == "JACK") {
-            cards.cards[0].value = 10;
-        }
-        if (cards.cards[0].value == "QUEEN") {
-            cards.cards[0].value = 10;
-
-
-        }
-        if (cards.cards[0].value == "KING") {
-            cards.cards[0].value = 10;
-        }
-        if (cards.cards[0].value == "ACE") {
-            cards.cards[0].value = 11;
-        }
-
-        if (cards.cards[1].value == "JACK") {
-            cards.cards[1].value = 10;
-
-        }
-        if (cards.cards[1].value == "QUEEN") {
-            cards.cards[1].value = 10;
-
-        }
-        if (cards.cards[1].value == "KING") {
-            cards.cards[1].value = 10;
-
-        }
-        if (cards.cards[1].value == "ACE") {
-            cards.cards[1].value = 11;
-
-        }
-        if (cards.cards[3].value == "JACK") {
-            cards.cards[3].value = 10;
-
-        }
-        if (cards.cards[3].value == "QUEEN") {
-            cards.cards[3].value = 10;
-
-        }
-        if (cards.cards[3].value == "KING") {
-            cards.cards[3].value = 10;
-
-        }
-        if (cards.cards[3].value == "ACE") {
-            cards.cards[3].value = 11;
-
+        for (i = 0; i < cards.cards.length; i++) {
+            if (cards.cards[i].value == "JACK") {
+                cards.cards[i].value = 10;
+            }
+            if (cards.cards[i].value == "QUEEN") {
+                cards.cards[i].value = 10;
+            }
+            if (cards.cards[i].value == "KING") {
+                cards.cards[i].value = 10;
+            }
+            if (cards.cards[i].value == "ACE") {
+                cards.cards[i].value = 11;
+            }
         }
 
         //adds the values of the cards//
@@ -233,7 +166,7 @@ function stand(cards) {
     standButton.addEventListener('click', function () {
 
 
-      let stand = `
+        let stand = `
      <p> Dealers Hand </p>
      <img src="${cards.cards[2].image}">
      <img src="${cards.cards[4].image}">
@@ -241,100 +174,19 @@ function stand(cards) {
 
         //turns suited cards into numbers//
 
-        if (cards.cards[0].value == "JACK") {
-            cards.cards[0].value = 10;
-        }
-        if (cards.cards[0].value == "QUEEN") {
-            cards.cards[0].value = 10;
-
-
-        }
-        if (cards.cards[0].value == "KING") {
-            cards.cards[0].value = 10;
-        }
-        if (cards.cards[0].value == "ACE") {
-            cards.cards[0].value = 11;
-        }
-
-        if (cards.cards[1].value == "JACK") {
-            cards.cards[1].value = 10;
-
-        }
-        if (cards.cards[1].value == "QUEEN") {
-            cards.cards[1].value = 10;
-
-        }
-        if (cards.cards[1].value == "KING") {
-            cards.cards[1].value = 10;
-
-        }
-        if (cards.cards[1].value == "ACE") {
-            cards.cards[1].value = 11;
-
-        }
-        if (cards.cards[3].value == "JACK") {
-            cards.cards[3].value = 10;
-
-        }
-        if (cards.cards[3].value == "QUEEN") {
-            cards.cards[3].value = 10;
-
-        }
-        if (cards.cards[3].value == "KING") {
-            cards.cards[3].value = 10;
-
-        }
-        if (cards.cards[3].value == "ACE") {
-            cards.cards[3].value = 11;
-
-        }
-        if (cards.cards[2].value == "JACK") {
-            cards.cards[2].value = 10;
-
-        }
-        if (cards.cards[2].value == "QUEEN") {
-            cards.cards[2].value = 10;
-
-        }
-        if (cards.cards[2].value == "KING") {
-            cards.cards[2].value = 10;
-
-        }
-        if (cards.cards[2].value == "ACE") {
-            cards.cards[2].value = 11;
-
-        }
-        if (cards.cards[4].value == "JACK") {
-            cards.cards[4].value = 10;
-
-        }
-        if (cards.cards[4].value == "QUEEN") {
-            cards.cards[4].value = 10;
-
-        }
-        if (cards.cards[4].value == "KING") {
-            cards.cards[4].value = 10;
-
-        }
-        if (cards.cards[4].value == "ACE") {
-            cards.cards[4].value = 11;
-
-        }
-        if (cards.cards[5].value == "JACK") {
-            cards.cards[5].value = 10;
-
-        }
-        if (cards.cards[5].value == "QUEEN") {
-            cards.cards[5].value = 10;
-
-        }
-        if (cards.cards[5].value == "KING") {
-            cards.cards[5].value = 10;
-
-        }
-        if (cards.cards[5].value == "ACE") {
-            cards.cards[5].value = 11;
-
+        for (i = 0; i < cards.cards.length; i++) {
+            if (cards.cards[i].value == "JACK") {
+                cards.cards[i].value = 10;
+            }
+            if (cards.cards[i].value == "QUEEN") {
+                cards.cards[i].value = 10;
+            }
+            if (cards.cards[i].value == "KING") {
+                cards.cards[i].value = 10;
+            }
+            if (cards.cards[i].value == "ACE") {
+                cards.cards[i].value = 11;
+            }
         }
 
         //adds values of playercards//
@@ -367,56 +219,56 @@ function stand(cards) {
             let dealerValue = parseInt(cards.cards[2].value, 10) + parseInt(cards.cards[4].value, 10) + parseInt(cards.cards[5].value, 10)
 
 
-                    if (dealerValue > playerValue) {
-                        dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, dealer wins!<h2>`;
-                        playerScore.innerHTML = "";
-                    }
-                    if (dealerValue < playerValue && dealerValue < 16) {
-                        dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, cause a noob made this game. You win!<h2>`;
-                        playerScore.innerHTML = "";
-                    }
-                    if (dealerValue < playerValue) {
-                        dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, you win!<h2>`;
-                        playerScore.innerHTML = "";
-                    }
-                    if (dealerValue == playerValue) {
-                        let values = `<h2> It's a tie! </h2> 
+            if (dealerValue > playerValue) {
+                dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, dealer wins!<h2>`;
+                playerScore.innerHTML = "";
+            }
+            if (dealerValue < playerValue && dealerValue < 16) {
+                dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, cause a noob made this game. You win!<h2>`;
+                playerScore.innerHTML = "";
+            }
+            if (dealerValue < playerValue) {
+                dealerScore.innerHTML = `<h2> Dealer stops at ${dealerValue}, you win!<h2>`;
+                playerScore.innerHTML = "";
+            }
+            if (dealerValue == playerValue) {
+                let values = `<h2> It's a tie! </h2> 
                                 `;
-                        dealerScore.innerHTML = values;
-                        playerScore.innerHTML = "";
+                dealerScore.innerHTML = values;
+                playerScore.innerHTML = "";
 
-                    }
-                    if (dealerValue > 21) {
-                        let values = `<h2>Dealer busts! You win!</h2`;
-                        dealerScore.innerHTML = values;
-                        playerScore.innerHTML = "";
+            }
+            if (dealerValue > 21) {
+                let values = `<h2>Dealer busts! You win!</h2`;
+                dealerScore.innerHTML = values;
+                playerScore.innerHTML = "";
 
-                    }
-                    if (dealerValue == 21) {
-                        let values = `<h2> Dealer has 21 and wins, if you have a problem with that, email me at lowbeer.ola@gmail.com </h2>`;
-                        dealerScore.innerHTML = values;
-                        playerScore.innerHTML = "";
+            }
+            if (dealerValue == 21) {
+                let values = `<h2> Dealer has 21 and wins, if you have a problem with that, email me at lowbeer.ola@gmail.com </h2>`;
+                dealerScore.innerHTML = values;
+                playerScore.innerHTML = "";
 
-                    }
+            }
 
-            } else if (dealerValue > playerValue) {
-                let values = `
+        } else if (dealerValue > playerValue) {
+            let values = `
                 <h2> Dealer stops at ${dealerValue}, dealer wins! </h2> 
                 `;
 
-                dealerScore.innerHTML = values;
-                playerScore.innerHTML = "";
-            } else if (dealerValue < playerValue) {
-                dealerScore.innerHTML = `<h2>dealer stops at ${dealerValue}, you win!<h2>`;
-                playerScore.innerHTML = "";
+            dealerScore.innerHTML = values;
+            playerScore.innerHTML = "";
+        } else if (dealerValue < playerValue) {
+            dealerScore.innerHTML = `<h2>Dealer stops at ${dealerValue}, you win!<h2>`;
+            playerScore.innerHTML = "";
 
-            } else if (dealerValue == playerValue) {
-                let values = `<h2> It's a tie! </h2> 
+        } else if (dealerValue == playerValue) {
+            let values = `<h2> It's a tie! </h2> 
                 `;
-                dealerScore.innerHTML = values;
-                playerScore.innerHTML = "";
-            } else {
-                console.log('error')
+            dealerScore.innerHTML = values;
+            playerScore.innerHTML = "";
+        } else {
+            console.log('error')
         }
     })
 }
