@@ -73,7 +73,7 @@ function displayCards(cards) {
         
 
         let dealerCards = `
-        <p> Dealers Hand </p>
+        <p> Dealers hand </p>
         <img src="${cards.cards[2].image}">
         
         `;
